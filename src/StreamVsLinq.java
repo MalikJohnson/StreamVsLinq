@@ -68,34 +68,40 @@ public class StreamVsLinq {
 		
 		//Int array query
 		
-		//var testQuery = Arrays.stream(testNum).filter(e -> e < 0);
+		var testQuery = Arrays.stream(testNum).filter(e -> e < 0);
 		//testQuery.forEach(e->System.out.print(e + " "));
 		
 		
 		//String list query
 		
-		/*
+		
 		List<String> wordQuery = words.stream()
 				.filter(word -> 't'==word.charAt(0))
 				.collect(Collectors.toList());
 
-				wordQuery.forEach(System.out::println);
-				*/
+				//wordQuery.forEach(System.out::println);
+				
 		
 				
 		//Hashmap query
-		/*
+		
 		var mapQuery = hashMap.entrySet()
                 .stream()
                 .filter(e-> e.getKey().contains("cpu"))
                 .map(Map.Entry::getKey)
                 .collect(Collectors.toList());	
 			
-		mapQuery.forEach(System.out::println);
-		*/
+		//mapQuery.forEach(System.out::println);
 		
-		// Execute the query.
 		
+		
+		//apartment query
+		var apartmentQuery = apartment.stream()
+				.filter(test -> test.getJob().equals("IT")) 
+				.map(f -> f.getName())
+                .collect(Collectors.toList());
+
+				apartmentQuery.forEach(System.out::println);
 		 
 
 	}
